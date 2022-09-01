@@ -33,7 +33,7 @@ export class UserService {
   ): Promise<any> {
     const updatedUser = await this.prisma.user.update({
       where: {
-        email: email,
+        email,
       },
       data,
     });

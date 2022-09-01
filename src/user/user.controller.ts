@@ -13,8 +13,9 @@ import { CreateUserDTO } from './dto/create.user.dto';
 import { UpdateUserDTO } from './dto/update.user.dto';
 import { UserService } from './user.service';
 
-@Controller('user')
+@Controller(UserController.USER_CONTROLLER_ROUTE)
 export class UserController {
+  public static readonly USER_CONTROLLER_ROUTE = '/user';
   constructor(private userService: UserService) {}
   @Get()
   async sayHelloWorld(): Promise<string> {

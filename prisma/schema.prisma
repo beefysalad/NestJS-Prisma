@@ -18,14 +18,15 @@ model User{
   role    Role
 }
 
-model Organizer {
+model Organizer{
   id      Int @id @default(autoincrement())
+  email   String @unique
   name    String
-  type    Type
+  type    OrgType
 
 }
 
-enum Type {
+enum OrgType {
   DEPARTMENT
   ORGANIZATION
   OTHERS
