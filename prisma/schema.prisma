@@ -15,4 +15,23 @@ model User{
   email   String  @unique
   name    String?
   age     Int
+  role    Role
+}
+
+model Organizer {
+  id      Int @id @default(autoincrement())
+  name    String
+  type    Type
+
+}
+
+enum Type {
+  DEPARTMENT
+  ORGANIZATION
+  OTHERS
+}
+
+enum Role{
+  STAFF
+  ADMIN
 }

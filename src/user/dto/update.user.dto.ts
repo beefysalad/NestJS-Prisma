@@ -4,22 +4,27 @@ import {
   IsEnum,
   IsNotEmpty,
   IsNumber,
+  IsOptional,
   IsString,
 } from 'class-validator';
 
-export class CreateUserDTO {
+export class UpdateUserDTO {
   @IsEmail()
   @IsString()
-  email: string;
+  @IsOptional()
+  email?: string;
 
   @IsString()
   @IsNotEmpty()
-  name: string;
+  @IsOptional()
+  name?: string;
 
   @IsNumber()
-  age: number;
+  @IsOptional()
+  age?: number;
 
   @IsEnum(Role)
   @IsNotEmpty()
-  role: Role;
+  @IsOptional()
+  role?: Role;
 }
